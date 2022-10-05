@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Asdarr.ID - Admin Page</title>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!-- Main CSS-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- Table CSS -->
+    <link rel="stylesheet" type="text/css" href="table.css">
+    
+    <!-- Tampilan Nav-Bar -->
+  </head>
+
+    <nav class="navbar navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+          Admin Page
+        </a>
+        <div class="col text-end">
+          <a href="loginpage.html" class="btn btn-primary">Log in</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Tampilan Tabel Keterangan -->
+    <main>
+      <div class="row">
+        
+        <div class="col-md-5 col-lg-2 square">
+          <div class="info">
+            <div class="alert alert-info" role="alert">
+              <a href="#" class="underline text-decoration-none-underline sp"><b> Semua Pesanan </b></a>
+              <p><b> 12 </b></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-5 col-lg-2 square">
+          <div class="info">
+              <div class="alert alert-danger role="alert">
+                <a href="#" class="underline text-decoration-none"><b>Belum Dibayar</b></a>
+              <p><b> 25 </b></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-5 col-lg-2 square">
+            <div class="info">
+              <div class="alert alert-success" role="alert">
+                <a href="#" class="underline text-decoration-none"><b>Sudah Dibayar</b></a>
+                <p><b> 10 </b></p>
+              </div>
+            </div>
+        </div>
+        
+        <div class="col-md-5 col-lg-2 square">
+            <div class="info">
+              <div class="alert alert-primary" role="alert">
+                <i class="bi bi-send-fill"></i>
+                  <a href="#" class="underline text-decoration-none"><b>Sudah Dikirim</b></a>
+                <p><b>50</b></p>
+              </div>
+            </div>
+        </div>
+       
+        <div class="col-md-5 col-lg-2 square">
+          <div class="info">
+            <div class="alert alert-success" role="alert">
+               <a href="#" class="underline text-decoration-none"><b>Selesai</b></a>
+              <p><b> 10 </b></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-5 col-lg-2 square">
+          <div class="info">
+            <div class="alert alert-danger"role="alert">
+              <a href="#" class="underline text-decoration-none"><b>Gagal</b></a>
+              <p><b> 10 </b></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      </div>
+    </main>    
+    
+    <!-- Tampilan Tabel Data -->
+    <main>
+        <h1 class="heading-table"> Semua Pesanan </h1>
+          <table class="table table-sortable">
+
+        
+              <thead>
+                <tr>
+                  <th> No </th>
+                  <th> Nama Pengguna </th>
+                  <th> No Pesanan </th>
+                  <th> Status </th>
+                 <th> Bukti Pembayaran </th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td> 1 </td>
+                  <td> chunchunmadu </td>
+                  <td> 123456789 </td>
+                  <td> Belum Dibayar </td>
+                  <td> <a href="#" class="btn btn-primary">Lihat</a> </td>
+                </tr>
+
+                <tr>
+                  <td> 2 </td>
+                  <td> Lexon </td>
+                  <td> 123456789 </td>
+                  <td> Sudah Dibayar </td>
+                  <td> <a href="#" class="btn btn-primary">Lihat</a> </td>
+                </tr>
+
+                <tr>
+                  <td> 3 </td>
+                  <td> Assdar </td>
+                  <td> 123456789 </td>
+                 <td> Belum Dibayar </td>
+                  <td> <a href="#" class="btn btn-primary">Lihat</a> </td>
+                </tr>
+
+                <tr>
+                  <td> 4 </td>
+                  <td> comotsake </td>
+                  <td> 123456789 </td>
+                  <td> Sudah Dibayar </td>
+                 <td> <a href="#" class="btn btn-primary">Lihat</a> </td>
+               </tr>
+
+            </tbody>
+        </table>
+      </table>
+    
+    </main>
+
+    <!-- Sumber JS -->
+    <script src="table.js"></script>
