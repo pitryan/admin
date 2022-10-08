@@ -28,7 +28,7 @@
     tBody.append(...sortedRows);
 
     // Remember how the column is currently sorted
-    table.querySelectorAll("th").forEach(th => th.classList.remove("th-sort-asc", "th-sort-desc"));
+    table.querySelectorAll("th").forEach(th => th.classList.remove("th-contect-asc", "th-sort-desc"));
     table.querySelector(`th:nth-child(${ column + 1})`).classList.toggle("th-sort-asc", asc);
     table.querySelector(`th:nth-child(${ column + 1})`).classList.toggle("th-sort-desc", !asc);
 }
