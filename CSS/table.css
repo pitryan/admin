@@ -30,9 +30,6 @@
     background-color: #f3f3f3;
 }
 
-.content-table tbody tr:last-of-type{
-    border-bottom: 2px solid blue;
-}
 
 .content-table tbody tr.active-row{
     font-weight: bold;

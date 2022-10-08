@@ -3,10 +3,6 @@
   text-underline-offset: 8px;
 }
 
-
-
-
-
 .square{
   height: 100px;
   margin-top: 10px;
@@ -37,7 +33,6 @@ padding-bottom: 0.25rem;
 position: relative;
 color: black;
 }
-
 .underline::before{
 content: '';
 position: absolute;
@@ -55,5 +50,8 @@ right: 0;
 right: auto;
 }
 
-
+.modal-body img{
+  width: 50%;
+  height: 50%;
+}
 
