@@ -5,5 +5,4 @@ https://admin-asdarrid.netlify.app
 untuk menampilkan admin page
 
 Kelompok:
-Pitryan. 
-Asep Darmawan.
+Pitryan, Asep Darmawan.
