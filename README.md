@@ -2,4 +2,8 @@
 https://admin-asdarrid.netlify.app
 
 
-untuk admin saja
+untuk menampilkan admin page
+
+Kelompok:
+Pitryan. 
+Asep Darmawan.
