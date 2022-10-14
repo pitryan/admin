@@ -48,11 +48,8 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <input type="hidden" name="action" value="login">
-                            <button id="login-submit" class="w-100 btn btn-lg btn-primary p-1 fs-6" type="submit">
-                                <a href="../HTML/adminpage.html" style="color: white; text-decoration: none;"> Masuk
-                                </a>
-                            </button>
+                            <a href="HTML/adminpage.html" id="login-submit" class="w-100 btn btn-primary"
+                                onclick="return valMasuk();">Masuk</a>
                         </div>
                     </div>
                 </form>
@@ -69,6 +66,25 @@
                 x.type = "text";
             } else {
                 x.type = "password";
+            }
+        }
+    </script>
+
+    <script>
+        function valMasuk() {
+
+            //validasi no
+            if (document.getElementById('phone_number').value == "") {
+                alert("Nomor WhatsApp tidak boleh kosong");
+                document.getElementById('phone_number').focus();
+                return false;
+            }
+
+            //validasi nama
+            if (document.getElementById('password').value == "") {
+                alert("Password tidak boleh kosong");
+                document.getElementById('password').focus();
+                return false;
             }
         }
     </script>
