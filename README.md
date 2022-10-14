@@ -1,7 +1,5 @@
-# Admin
+# WEB - Customer
 
-
-untuk menampilkan admin page
-
-Kelompok:
-Pitryan, Asep Darmawan.
+Kelompok :  
+535210060 - Asep Darmawan  
+535210015 - Pitryan
