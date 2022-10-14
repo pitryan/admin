@@ -9,17 +9,18 @@
 
   <title>Asdarr.ID - Admin Page</title>
 
-   <!-- CSS only -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-   integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-   integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
- <!-- JavaScript Bundle with Popper -->
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-   integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
- </script>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+  </script>
+
   <!-- Main CSS-->
   <link rel="stylesheet" href="/CSS/style.css">
 
@@ -33,19 +34,18 @@
   <div class="container-fluid">
     <a class="navbar-brand" href="/HTML/adminpage.html"> Admin Page </a>
     <div class="col text-end">
-      <a href="/Index.html" class="btn btn-primary">Log in</a>
+      <a href="/HTML/loginpage.html" class="btn btn-primary">Log in</a>
     </div>
   </div>
 </nav>
 
-<!-- Tampilan Tabel Keterangan -->
 <!-- Tampilan Tabel Keterangan -->
 <main>
   <div class="row">
     <div class="col-md-5 col-lg-2 square">
       <div class="info">
         <div class="alert alert-info" role="alert">
-          <a href="/HTML/Pesanan/Semua-pesanan.html" class="underline text-decoration-none"><b> Semua Pesanan </b></a>
+          <a href="/index.html" class="underline text-decoration-none-underline sp"><b> Semua Pesanan </b></a>
           <p><b> 16 </b></p>
         </div>
       </div>
@@ -83,7 +83,7 @@
     <div class="col-md-5 col-lg-2 square">
       <div class="info">
         <div class="alert alert-success" role="alert">
-          <a href="/HTML/Pesanan/Selesai.html" class="underline text-decoration-none-underline sp"><b>Selesai</b></a>
+          <a href="/HTML/Pesanan/Selesai.html" class="underline text-decoration-none"><b>Selesai</b></a>
           <p><b> 4 </b></p>
         </div>
       </div>
@@ -100,7 +100,6 @@
   </div>
 </main>
 
-
 <!-- Tampilan Tabel Data -->
 <main>
   <table class="content-table">
@@ -108,11 +107,10 @@
       <tr>
         <th> Nomor Transaksi </th>
         <th> Tanggal </th>
-        <th> Nama </th>
-        <th> Kategori </th>
-        <th> Metode Pembayaran </th>
-        <th> Nominal Order </th>
-        <th> Harga </th>
+        <th> Nama Pengguna </th>
+        <th> Metode Pembayaran</th>
+        <th> Nominal </th>
+        <th> Detail </th>
       </tr>
     </thead>
 
@@ -145,11 +143,10 @@
         </div>
         </td>
         <td> 08/09/2022 </td>
-        <td> JessNoLimit </td>
-        <td> Diamond Mobile Legenda </td>
-        <td> BCA </td>
-        <td> 5000 DM </td>
+        <td> Chunchunmadu </td>
+        <td> Dana </td>
         <td> Rp.1.000.000 </td>
+        <td class="text-primary"> sudah bayar </td>
       </tr>
 
       <tr>
@@ -180,11 +177,10 @@
         </div>
         </td>
         <td> 08/09/2022 </td>
-        <td> JessNoLimit </td>
-        <td> Diamond Mobile Legenda </td>
-        <td> BCA </td>
-        <td> 5000 DM </td>
+        <td> Chunchunmadu </td>
+        <td> Dana </td>
         <td> Rp.1.000.000 </td>
+        <td class="text-danger"> Belum Bayar </td>
       </tr>
 
       <tr>
@@ -206,20 +202,18 @@
                   <li style="list-style-type: none;"> Nama Pengguna : Chunchunmadu </li>
                   <li style="list-style-type: none;"> Metode Pembayaran : Dana </li>
                   <li style="list-style-type: none;"> Nominal : Rp.1.000.000 </li>
-                  <li style="list-style-type: none;"> Status : Berhasil </li>
+                  <li style="list-style-type: none;"> Status : Gagal </li>
                 </ul>
               </div>
-              <br>
             </div>
           </div>
         </div>
         </td>
         <td> 08/09/2022 </td>
-        <td> JessNoLimit </td>
-        <td> Diamond Mobile Legenda </td>
-        <td> BCA </td>
-        <td> 5000 DM </td>
+        <td> Chunchunmadu </td>
+        <td> Dana </td>
         <td> Rp.1.000.000 </td>
+        <td class="text-warning"> Siap Dikirim </td>
       </tr>
 
       <tr>
@@ -241,7 +235,7 @@
                   <li style="list-style-type: none;"> Nama Pengguna : Chunchunmadu </li>
                   <li style="list-style-type: none;"> Metode Pembayaran : Dana </li>
                   <li style="list-style-type: none;"> Nominal : Rp.1.000.000 </li>
-                  <li style="list-style-type: none;"> Status : Berhasil </li>
+                  <li style="list-style-type: none;"> Status : Gagal </li>
                 </ul>
               </div>
               <br>
@@ -250,11 +244,10 @@
         </div>
         </td>
         <td> 08/09/2022 </td>
-        <td> JessNoLimit </td>
-        <td> Diamond Mobile Legenda </td>
-        <td> BCA </td>
-        <td> 5000 DM </td>
+        <td> Chunchunmadu </td>
+        <td> Dana </td>
         <td> Rp.1.000.000 </td>
+        <td class="text-success"> selesai </td>
       </tr>
 
     </tbody>
@@ -262,5 +255,8 @@
   </table>
   </table>
 
-  <!-- Sumber JS -->
-  <script src="../JS/table.js"></script>
+</main>
+
+<!-- Sumber JS -->
+<script src="table.js"></script>
+<script src="https://kit.fontawesome.com/695144269c.js" crossorigin="anonymous"></script>

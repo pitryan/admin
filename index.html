@@ -2,261 +2,75 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="/Images/shorcut.png" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/Images/shorcut.png" />
 
-  <title>Asdarr.ID - Admin Page</title>
+    <!-- CSS only bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- end -->
 
-  <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
-  <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
-  </script>
-
-  <!-- Main CSS-->
-  <link rel="stylesheet" href="/CSS/style.css">
-
-  <!-- Table CSS -->
-  <link rel="stylesheet" href="/CSS/table.css">
-
-  <!-- Tampilan Nav-Bar -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="/CSS/loginpage.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <title> AsdarrID - Masuk </title>
 </head>
 
-<nav class="navbar navbar-dark bg-primary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/HTML/adminpage.html"> Admin Page </a>
-    <div class="col text-end">
-      <a href="/HTML/loginpage.html" class="btn btn-primary">Log in</a>
-    </div>
-  </div>
-</nav>
-
-<!-- Tampilan Tabel Keterangan -->
-<main>
-  <div class="row">
-    <div class="col-md-5 col-lg-2 square">
-      <div class="info">
-        <div class="alert alert-info" role="alert">
-          <a href="/index.html" class="underline text-decoration-none-underline sp"><b> Semua Pesanan </b></a>
-          <p><b> 16 </b></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-5 col-lg-2 square">
-      <div class="info">
-        <div class="alert alert-danger role=" alert">
-          <a href="/HTML/Pesanan/Belum-Bayar.html" class="underline text-decoration-none"><b>Belum Dibayar</b></a>
-          <p><b> 4 </b></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-5 col-lg-2 square">
-      <div class="info">
-        <div class="alert alert-success" role="alert">
-          <a href="/HTML/Pesanan/Sudah-Bayar.html" class="underline text-decoration-none"><b>Sudah
-              Dibayar</b></a>
-          <p><b> 4 </b></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-5 col-lg-2 square">
-      <div class="info">
-        <div class="alert alert-primary" role="alert">
-          <a href="/HTML/Pesanan/Siap-Dikirim.html" class="underline text-decoration-none"><b>Siap Dikirim</b></a>
-          <p><b> 4 </b></p>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="col-md-5 col-lg-2 square">
-      <div class="info">
-        <div class="alert alert-success" role="alert">
-          <a href="/HTML/Pesanan/Selesai.html" class="underline text-decoration-none"><b>Selesai</b></a>
-          <p><b> 4 </b></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-5 col-lg-2 square">
-      <div class="info">
-        <div class="alert alert-danger" role="alert">
-          <a href="/HTML/Pesanan/Kode-Pembayaran-Retail.html" class="underline text-decoration-none"><b> Kode Tagihan </b></a>
-          <p><b> 4 </b></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</main>
-
-<!-- Tampilan Tabel Data -->
-<main>
-  <table class="content-table">
-    <thead>
-      <tr>
-        <th> Nomor Transaksi </th>
-        <th> Tanggal </th>
-        <th> Nama Pengguna </th>
-        <th> Metode Pembayaran</th>
-        <th> Nominal </th>
-        <th> Detail </th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr>
-        <td>
-          <a href="#" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i
-              class="fa-solid fa-magnifying-glass"></i> 12346 </a> </td>
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Detail</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <ul>
-                  <li style="list-style-type: none;"> Nomor Transaksi : 12346 </li>
-                  <li style="list-style-type: none;"> Tanggal : 08/09/2022 </li>
-                  <li style="list-style-type: none;"> Nama Pengguna : Chunchunmadu </li>
-                  <li style="list-style-type: none;"> Metode Pembayaran : Dana </li>
-                  <li style="list-style-type: none;"> Nominal : Rp.1.000.000 </li>
-                  <li style="list-style-type: none;"> Status : Berhasil </li>
-                </ul>
-              </div>
-              <br>
+<body>
+    <div class="container-login">
+        <div class="form-signin">
+            <div class="text-center mb-4">
+                <img src="/Images/logo.png" height="40">
             </div>
-          </div>
-        </div>
-        </td>
-        <td> 08/09/2022 </td>
-        <td> Chunchunmadu </td>
-        <td> Dana </td>
-        <td> Rp.1.000.000 </td>
-        <td class="text-primary"> sudah bayar </td>
-      </tr>
 
-      <tr>
-        <td>
-          <a href="#" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i
-              class="fa-solid fa-magnifying-glass"></i> 12346 </a> </td>
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Detail</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <ul>
-                  <li style="list-style-type: none;"> Nomor Transaksi : 12346 </li>
-                  <li style="list-style-type: none;"> Tanggal : 08/09/2022 </li>
-                  <li style="list-style-type: none;"> Nama Pengguna : Chunchunmadu </li>
-                  <li style="list-style-type: none;"> Metode Pembayaran : Dana </li>
-                  <li style="list-style-type: none;"> Nominal : Rp.1.000.000 </li>
-                  <li style="list-style-type: none;"> Status : Berhasil </li>
-                </ul>
-              </div>
-              <br>
+            <div class="bg-white cbm-section-shadow rounded-3 form-sign-area">
+                <form>
+                    <div class="row g-3">
+                        <div class="fields-form on-progress">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label for="text" class="form-label">Username</label>
+                                    <input type="text" class="form-control" id="Username" placeholder="Username"
+                                        name="email" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="password" class="form-label">Kata Sandi</label>
+                                    <div class="form-group-password">
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="Kata Sandi" required>
+                                        <input type="checkbox" onclick="myFunction()"> Show Password
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <input type="hidden" name="action" value="login">
+                            <button id="login-submit" class="w-100 btn btn-lg btn-primary p-1 fs-6" type="submit">
+                                <a href="/HTML/adminpage.html" style="color: white; text-decoration: none;"> Masuk </a>
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
-          </div>
         </div>
-        </td>
-        <td> 08/09/2022 </td>
-        <td> Chunchunmadu </td>
-        <td> Dana </td>
-        <td> Rp.1.000.000 </td>
-        <td class="text-danger"> Belum Bayar </td>
-      </tr>
+    </div>
+    </div>
 
-      <tr>
-        <td>
-          <a href="#" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i
-              class="fa-solid fa-magnifying-glass"></i> 12346 </a> </td>
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Detail</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <ul>
-                  <li style="list-style-type: none;"> Nomor Transaksi : 12346 </li>
-                  <li style="list-style-type: none;"> Tanggal : 08/09/2022 </li>
-                  <li style="list-style-type: none;"> Nama Pengguna : Chunchunmadu </li>
-                  <li style="list-style-type: none;"> Metode Pembayaran : Dana </li>
-                  <li style="list-style-type: none;"> Nominal : Rp.1.000.000 </li>
-                  <li style="list-style-type: none;"> Status : Gagal </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        </td>
-        <td> 08/09/2022 </td>
-        <td> Chunchunmadu </td>
-        <td> Dana </td>
-        <td> Rp.1.000.000 </td>
-        <td class="text-warning"> Siap Dikirim </td>
-      </tr>
+    <!-- untuk hide dan unhide password -->
+    <script>
+        function myFunction() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+            x.type = "text";
+            } else {
+            x.type = "password";
+            }
+        }
+    </script>
 
-      <tr>
-        <td>
-          <a href="#" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i
-              class="fa-solid fa-magnifying-glass"></i> 12346 </a> </td>
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Detail</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <ul>
-                  <li style="list-style-type: none;"> Nomor Transaksi : 12346 </li>
-                  <li style="list-style-type: none;"> Tanggal : 08/09/2022 </li>
-                  <li style="list-style-type: none;"> Nama Pengguna : Chunchunmadu </li>
-                  <li style="list-style-type: none;"> Metode Pembayaran : Dana </li>
-                  <li style="list-style-type: none;"> Nominal : Rp.1.000.000 </li>
-                  <li style="list-style-type: none;"> Status : Gagal </li>
-                </ul>
-              </div>
-              <br>
-            </div>
-          </div>
-        </div>
-        </td>
-        <td> 08/09/2022 </td>
-        <td> Chunchunmadu </td>
-        <td> Dana </td>
-        <td> Rp.1.000.000 </td>
-        <td class="text-success"> selesai </td>
-      </tr>
+</body>
 
-    </tbody>
-  </table>
-  </table>
-  </table>
-
-</main>
-
-<!-- Sumber JS -->
-<script src="table.js"></script>
-<script src="https://kit.fontawesome.com/695144269c.js" crossorigin="anonymous"></script>
+</html>
