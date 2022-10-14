@@ -1,5 +1,4 @@
-# Project-Web-Progamming
-https://admin-asdarrid.netlify.app
+# Admin
 
 
 untuk menampilkan admin page
