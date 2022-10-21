@@ -1,4 +1,4 @@
-# WEB - Customer
+# WEB - Admin
 
 Kelompok :  
 535210060 - Asep Darmawan  
