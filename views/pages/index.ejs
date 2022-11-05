@@ -28,14 +28,14 @@
             </div>
 
             <div class="bg-white cbm-section-shadow rounded-3 form-sign-area">
-                <form>
+                <form action="/auth/index" method="post">
                     <div class="row g-3">
                         <div class="fields-form on-progress">
                             <div class="row g-3">
                                 <div class="col-12">
                                     <label for="text" class="form-label">Username</label>
                                     <input type="text" class="form-control" id="Username" placeholder="Username"
-                                        name="email" required>
+                                        name="Username" required>
                                 </div>
                                 <div class="col-12">
                                     <label for="password" class="form-label">Kata Sandi</label>
@@ -48,8 +48,7 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <a href="pages/html/adminpage.html" id="login-submit" class="w-100 btn btn-primary"
-                                onclick="return valMasuk();">Masuk</a>
+                            <a id="login-submit" class="w-100 btn btn-primary" name="submit" value="login">Masuk</a>
                         </div>
                     </div>
                 </form>

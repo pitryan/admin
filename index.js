@@ -1,15 +1,33 @@
 const express = require('express');
-const ejs = require('ejs');
+const bodyParser = require('body-parser');
+const session = require('express-session');
 
-var app = express();
+const app = express();
 
+// set the view engine to ejs
+app.set('view engine', 'ejs'); // Model - View - Controller
+
+// body-parser to parse request body
+app.use(bodyParser.urlencoded()); // req res : request response
+
+// static files
 app.use(express.static('public'));
 
-app.set('view engine', 'ejs');
+// enabling session
+app.use(session({
+    secret: 'some_secret_key',
+    cookie: {}
+}));
 
-app.listen(4000);
+// routes
+const index = require('./router/index');
+const auth = require('./router/auth');
+const todo = require('./router/todo');
 
-app.get('/', function(req, res) {
-    res.render('pages/index');
+app.use('/', index);
+app.use('/auth', auth);
+app.use('/todo', todo);
+
+app.listen(process.env.PORT || 4000, () => { 
+    console.log('Server is running...'); 
 });
-
