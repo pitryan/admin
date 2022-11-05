@@ -26,5 +26,5 @@ const auth = require('./routes/auth');
 app.use('/', index);
 app.use('/auth', auth);
 
-app.listen(4000);
-console.log('Server runs at port 4000...');
+app.listen(8000);
+console.log('Server runs at port 8000...');
