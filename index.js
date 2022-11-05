@@ -20,14 +20,11 @@ app.use(session({
 }));
 
 // routes
-const index = require('./router/index');
-const auth = require('./router/auth');
-const todo = require('./router/todo');
+const index = require('./routes/index');
+const auth = require('./routes/auth');
 
 app.use('/', index);
 app.use('/auth', auth);
-app.use('/todo', todo);
 
-app.listen(process.env.PORT || 4000, () => { 
-    console.log('Server is running...'); 
-});
+app.listen(4000);
+console.log('Server runs at port 4000...');
