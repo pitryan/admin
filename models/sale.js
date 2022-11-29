@@ -10,7 +10,7 @@ const mongoose = require("mongoose"),
         product: String,
         price: String,
         payment: String,
-        date: Date,
+        date: String,
         stat_pembayaran: String,
         stat_transaksi: String,
         Kode: String
