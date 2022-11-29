@@ -1,5 +1,8 @@
+const { request, response } = require('express');
 const express = require('express');
-
+const user = require('../models/member');
+const price = require('../models/produk');
+const Sale = require('../models/sale');
 const router = express.Router();
 
 router.get('/login', async (req, res) => {

@@ -1,4 +1,8 @@
+const { request, response } = require('express');
 const express = require('express');
+const user = require('../models/member');
+const price = require('../models/produk');
+const Sale = require('../models/sale');
 const router = express.Router();
 
 router.get('/', async(req, res) => {
@@ -13,6 +17,17 @@ router.get('/', async(req, res) => {
 
 });
 
+router.get('/Pesanan/Semua-pesanan', (req, res) => {
+    const query2 = Sale.find({});
+        query2.exec((error, data) => {
+            
+        query2.getFilter();
+        res.render('pages/html/Pesanan/Semua-pesanan', {
+            ListOrder: data
+        });
+    });
+});
+
 router.get('/Pesanan/Belum-Bayar', (req, res) => {
     res.render('pages/html/Pesanan/Belum-Bayar')
 });
@@ -23,10 +38,6 @@ router.get('/Pesanan/Kode-Pembayaran-Retail', (req, res) => {
 
 router.get('/Pesanan/Selesai', (req, res) => {
     res.render('pages/html/Pesanan/Selesai')
-});
-
-router.get('/Pesanan/Semua-pesanan', (req, res) => {
-    res.render('pages/html/Pesanan/Semua-pesanan')
 });
 
 router.get('/Pesanan/Siap-Dikirim', (req, res) => {

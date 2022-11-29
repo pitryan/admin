@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
-
+const mongoose = require('mongoose')
 const app = express();
 
 // set the view engine to ejs
@@ -18,6 +18,15 @@ app.use(session({
     secret: 'some_secret_key',
     cookie: {}
 }));
+
+mongoose.connect(('mongodb://127.0.0.1:27017/AsdarrID'), (err,res) => {
+    if(err){
+        console.error(err);
+    }
+    else{
+        console.log('Database Sudah terhubung')
+    }
+})
 
 // routes
 const index = require('./routes/index');
