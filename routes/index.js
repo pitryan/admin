@@ -29,7 +29,15 @@ router.get('/Pesanan/Semua-pesanan', (req, res) => {
 });
 
 router.get('/Pesanan/Belum-Bayar', (req, res) => {
-    res.render('pages/html/Pesanan/Belum-Bayar')
+    const query2 = Sale.find({stat_pembayaran: "Belum Dibayar"});
+        query2.exec((error, data) => {
+        console.log(data);
+        query2.getFilter();
+        res.render('pages/html/Pesanan/Belum-Bayar', {
+            BelumBayar: data
+        });
+    });
+    
 });
 
 router.get('/Pesanan/Kode-Pembayaran-Retail', (req, res) => {
