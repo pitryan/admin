@@ -37,7 +37,6 @@ router.get('/Pesanan/Belum-Bayar', (req, res) => {
             BelumBayar: data
         });
     });
-    
 });
 
 router.get('/Pesanan/Kode-Pembayaran-Retail', (req, res) => {
@@ -45,7 +44,14 @@ router.get('/Pesanan/Kode-Pembayaran-Retail', (req, res) => {
 });
 
 router.get('/Pesanan/Selesai', (req, res) => {
-    res.render('pages/html/Pesanan/Selesai')
+    const query2 = Sale.find({stat_transaksi: "Selesai"});
+        query2.exec((error, data) => {
+        console.log(data);
+        query2.getFilter();
+        res.render('pages/html/Pesanan/Selesai', {
+            Selesai: data
+        });
+    });
 });
 
 router.get('/Pesanan/Siap-Dikirim', (req, res) => {
@@ -53,7 +59,14 @@ router.get('/Pesanan/Siap-Dikirim', (req, res) => {
 });
 
 router.get('/Pesanan/Sudah-Bayar', (req, res) => {
-    res.render('pages/html/Pesanan/Sudah-Bayar')
+    const query2 = Sale.find({stat_pembayaran: "Sudah Dibayar"});
+        query2.exec((error, data) => {
+        console.log(data);
+        query2.getFilter();
+        res.render('pages/html/Pesanan/Sudah-Bayar', {
+            SudahBayar: data
+        });
+    });
 });
 
 router.get('/views/pages', (req, res) => {

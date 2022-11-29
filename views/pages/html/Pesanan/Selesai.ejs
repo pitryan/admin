@@ -110,28 +110,27 @@
         <th> Tanggal </th>
         <th> Nama </th>
         <th> Kategori </th>
-        <th> Metode Pembayaran </th>
         <th> Nominal Order </th>
+        <th> Metode Pembayaran </th>
         <th> Harga </th>
       </tr>
     </thead>
 
     <tbody>
+      <%Selesai.forEach(sale => {%>
       <tr>
-        <td>
-          <a style="text-decoration: none;"> 12346 </a> </td>
-        </td>
-        <td> 08/09/2022 </td>
-        <td> JessNoLimit </td>
-        <td> Diamond Mobile Legenda </td>
-        <td> BCA </td>
-        <td> 5000 DM </td>
-        <td> Rp.1.000.000 </td>
+        <td><a style="text-decoration: none;"><%= sale.no %> </a> </td>
+        <td> <%= sale.date %> </td>
+        <td> <%= sale.name %> </td>
+        <td> <%= sale.game %> </td>
+        <td> <%= sale.product %> </td>
+        <td> <%= sale.payment %> </td>
+        <td> Rp<%= sale.price %> </td>
       </tr>
+      <%})%>
     </tbody>
-  </table>
-  </table>
   </table>
 
   <!-- Sumber JS -->
   <script src="../../assets/js/table.js"></script>
+  <script src="https://kit.fontawesome.com/695144269c.js" crossorigin="anonymous"></script>
