@@ -108,58 +108,33 @@
   <table class="content-table">
     <thead>
       <tr>
-        <th> Nomor Transaksi </th>
+        <th> No. Trx </th>
         <th> Tanggal </th>
+        <th> WA </th>
         <th> User ID </th>
         <th> Zone </th>
         <th> Kategori </th>
-        <th> Nominal Order </th>
+        <th> Nama Produk </th>
         <th> Kirim </th>
       </tr>
     </thead>
 
     <tbody>
+      <%SiapDikirim.forEach(sale => {%>
       <tr>
-        <td>
-          <a href="#" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i
-              class="fa-solid fa-magnifying-glass"></i> 12346 </a> </td>
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Detail</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <ul>
-                  <li style="list-style-type: none;"> Nama : Chunchunmadu </li>
-                  <li style="list-style-type: none;"> Nomor HP : 081234567890 </li>
-                  <li style="list-style-type: none;"> Email : chnchnmd@gmail.com</li>
-                  <li style="list-style-type: none;"> Metode Pembayaran : Dana </li>
-                  <li style="list-style-type: none;"> Harga : Rp.1.000.000 </li>
-                </ul>
-              </div>
-              <br>
-            </div>
-          </div>
-        </div>
-        </td>
-        <td> 08/09/2022 </td>
-        <td> 12345678910 </td>
-        <td> 1234 </td>
-        <td> Diamond Mobile Legenda </td>
-        <td> 5000 DM </td>
+        <td> <%=sale.no %> </td>
+        <td> <%=sale.date %> </td>
+        <td> <%=sale.phone_number %> </td>
+        <td> <%=sale.user_id %> </td>
+        <td> <%=sale.server %> </td>
+        <td> <%=sale.game %> </td>
+        <td> <%=sale.product %> </td>
         <td><button type="button" class="btn btn-success btn-sm"> <i class="bi bi-send-fill"> Kirim
             </i></button>
         </td>
+        <%})%>
       </tr>
-
-    
-
     </tbody>
-  </table>
-  </table>
   </table>
 
   <!-- Sumber JS -->

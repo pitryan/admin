@@ -55,7 +55,14 @@ router.get('/Pesanan/Selesai', (req, res) => {
 });
 
 router.get('/Pesanan/Siap-Dikirim', (req, res) => {
-    res.render('pages/html/Pesanan/Siap-Dikirim')
+    const query2 = Sale.find({stat_transaksi: "Siap Dikirim"});
+        query2.exec((error, data) => {
+        console.log(data);
+        query2.getFilter();
+        res.render('pages/html/Pesanan/Siap-Dikirim', {
+            SiapDikirim: data
+        });
+    });
 });
 
 router.get('/Pesanan/Sudah-Bayar', (req, res) => {
