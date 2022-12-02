@@ -66,7 +66,7 @@ router.get('/Pesanan/Siap-Dikirim', (req, res) => {
 });
 
 router.get('/Pesanan/Sudah-Bayar', (req, res) => {
-    const query2 = Sale.find({stat_pembayaran: "Sudah Dibayar"});
+    const query2 = Sale.find({stat_pembayaran: "Sedang di Verifikasi"});
         query2.exec((error, data) => {
         console.log(data);
         query2.getFilter();
