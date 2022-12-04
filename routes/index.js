@@ -68,7 +68,7 @@ router.get('/Pesanan/Selesai', (req, res) => {
 });
 
 router.get('/Pesanan/Kode-Pembayaran-Retail', (req, res) => {
-    const query2 = Sale.find({payment: "alfamart" || "indomaret" || "alfamidi"});
+    const query2 = Sale.find({retail: "yes"});
         query2.exec((error, data) => {
         query2.getFilter();
         res.render('pages/html/Pesanan/Kode-Pembayaran-Retail', {
