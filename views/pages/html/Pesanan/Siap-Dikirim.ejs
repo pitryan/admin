@@ -106,35 +106,41 @@
 <!-- Tampilan Tabel Data -->
 <main>
   <table class="content-table">
-    <thead>
-      <tr>
-        <th> No. Trx </th>
-        <th> Tanggal </th>
-        <th> WA </th>
-        <th> User ID </th>
-        <th> Zone </th>
-        <th> Kategori </th>
-        <th> Nama Produk </th>
-        <th> Kirim </th>
-      </tr>
-    </thead>
+    <form action="/sale/Pesanan/Siap-Dikirim" method="post">
+      <thead>
+        <tr>
+          <th> No WhatsApp </th>
+          <th> User ID </th>
+          <th> Zone </th>
+          <th> Kategori </th>
+          <th> Nama Produk </th>
+          <th> No. Trx </th>
+          <th> Kirim </th>
+        </tr>
+      </thead>
 
-    <tbody>
-      <%SiapDikirim.forEach(sale => {%>
-      <tr>
-        <td> <%=sale.no %> </td>
-        <td> <%=sale.date %> </td>
-        <td> <%=sale.phone_number %> </td>
-        <td> <%=sale.user_id %> </td>
-        <td> <%=sale.server %> </td>
-        <td> <%=sale.game %> </td>
-        <td> <%=sale.product %> </td>
-        <td><button type="button" class="btn btn-success btn-sm"> <i class="bi bi-send-fill"> Kirim
-            </i></button>
-        </td>
-        <%})%>
-      </tr>
-    </tbody>
+      <tbody>
+        <%SiapDikirim.forEach(sale => {%>
+        <tr>
+
+          <td> <%=sale.phone_number %> </td>
+          <td> <%=sale.user_id %> </td>
+          <td> <%=sale.server %> </td>
+          <td> <%=sale.game %> </td>
+          <td> <%=sale.product %> </td>
+          <td>
+            <input type="radio" class="btn btn-danger btn-sm" name="transaksi" value="<%= sale.no %>" required>
+            <a style="text-decoration: none;"><%= sale.no %> </a>
+          </td>
+          <td>
+            <input type="submit" class="btn btn-success btn-sm" name="konfirmasi" value="Kirim">
+            <!-- <button type="button" class="btn btn-success btn-sm"> <i class="bi bi-send-fill"> Kirim
+            </i></button> -->
+          </td>
+          <%})%>
+        </tr>
+      </tbody>
+    </form>
   </table>
 
   <!-- Sumber JS -->

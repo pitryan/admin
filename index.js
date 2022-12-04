@@ -3,21 +3,45 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const mongoose = require('mongoose')
 const app = express();
+const flash = require("connect-flash");
+const passport = require('passport');
+const port = process.env.PORT || 8000;
 
 // set the view engine to ejs
 app.set('view engine', 'ejs'); // Model - View - Controller
 
-// body-parser to parse request body
-app.use(bodyParser.urlencoded()); // req res : request response
+
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
 
 // static files
 app.use(express.static('public'));
+//connect flash
+app.use(flash());
 
-// enabling session
-app.use(session({
-    secret: 'some_secret_key',
-    cookie: {}
-}));
+// Session Setup
+app.use(
+    session({
+        // It holds the secret key for session
+        secret: "some_secret_key",
+
+        // Forces the session to be saved
+        // back to the session store
+        resave: true,
+
+        // Forces a session that is "uninitialized"
+        // to be saved to the store
+        saveUninitialized: false,
+        cookie: {
+
+            // Session expires after 1 day of inactivity.
+            expires: 86400000
+        }
+    })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 mongoose.connect(('mongodb://127.0.0.1:27017/AsdarrID'), (err,res) => {
     if(err){
@@ -31,9 +55,13 @@ mongoose.connect(('mongodb://127.0.0.1:27017/AsdarrID'), (err,res) => {
 // routes
 const index = require('./routes/index');
 const auth = require('./routes/auth');
+const sale = require('./routes/sale');
 
 app.use('/', index);
 app.use('/auth', auth);
+app.use('/sale', sale);
 
-app.listen(8000);
-console.log('Server runs at port 8000...');
+//port 
+app.listen(port, ()=> {
+    console.log(`Server sudah berjalan di port ${port}`);
+})

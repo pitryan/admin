@@ -1,22 +1,25 @@
 {
-  "name": "week10-teacher",
+  "name": "asdarr.id-customer",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.1",
+    "connect-flash": "^0.1.1",
     "ejs": "^3.1.8",
     "express": "^4.18.2",
     "express-ejs-layouts": "^2.5.0",
     "express-session": "^1.17.1",
     "mongodb": "^4.11.0",
     "mongoose": "^6.7.4",
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.20",
+    "passport": "^0.6.0"
   }
 }

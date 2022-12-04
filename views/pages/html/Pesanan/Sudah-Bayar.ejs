@@ -105,58 +105,61 @@
 <!-- Tampilan Tabel Data -->
 <main>
   <table class="content-table">
-    <thead>
-      <tr>
-        <th> Nomor Transaksi </th>
-        <th> Tanggal </th>
-        <th> Nomor Telepon </th>
-        <th> Nama </th>
-        <th> Harga </th>
-        <th> Bukti Transfer </th>
-        <th> Konfirmasi </th>
-      </tr>
-    </thead>
+    <form action="/sale/Pesanan/Sudah-Bayar" method="post">
+      <thead>
+        <tr>
+          <th> Nomor Telepon </th>
+          <th> Nama </th>
+          <th> Payment </th>
+          <th> Harga </th>
+          <th> Bukti Transfer </th>
+          <th> Nomor Transaksi </th>
+          <th> Konfirmasi </th>
+        </tr>
+      </thead>
 
-    <tbody>
-      <%SudahBayar.forEach(sale => {%>
-      <tr>
-        <td>
-          <a style="text-decoration: none;"><%= sale.no %> </a> </td>
-        <td> <%= sale.date %> </td>
-        <td> <%= sale.phone_number %> </td>
-        <td> <%= sale.name %> </td>
-        <td> Rp.<%= sale.price %> </td>
+      <tbody>
+        <%SudahBayar.forEach(sale => {%>
+        <tr>
+          <td> <%= sale.phone_number %> </td>
+          <td> <%= sale.name %> </td>
+          <td> <%= sale.payment%> </td>
+          <td> Rp.<%= sale.price %> </td>
 
-        <td>
-          <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal1"><i
-              class="fa-regular fa-eye"></i>
-            Lihat
-          </button>
-          <!-- Modal -->
-          <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Bukti Transaksi</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <td>
+            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+              data-bs-target="#exampleModal1"><i class="fa-regular fa-eye"></i>
+              Lihat
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Bukti Transaksi</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <img src="../../assets/images/bukti-transfer-m-banking-bca-asli..jpg">
+                  </div>
+                  <br>
                 </div>
-                <div class="modal-body">
-                  <img src="../../assets/images/bukti-transfer-m-banking-bca-asli..jpg">
-                </div>
-                <br>
               </div>
             </div>
-          </div>
-        </td>
-
-        <td>
-          <button type="btn btn-danger btn-sm" class="btn btn-danger btn-sm"><i class="bi bi-x"></i></button>
-          <button type="btn btn-success btn-sm" class="btn btn-success btn-sm"><i class="bi bi-check"></i></button>
-        </td>
-      </tr>
-      <%})%>
-    </tbody>
+          </td>
+          <td>
+            <input type="radio" class="btn btn-danger btn-sm" name="transaksi" value="<%= sale.no %>" required>
+            <a style="text-decoration: none;"><%= sale.no %> </a>
+          </td>
+          <td>
+            <input type="submit" class="btn btn-danger btn-sm" name="konfirmasi" value="Tolak">
+            <input type="submit" class="btn btn-success btn-sm" name="konfirmasi" value="Terima">
+          </td>
+        </tr>
+        <%})%>
+      </tbody>
+    </form>
   </table>
 
   <!-- Sumber JS -->

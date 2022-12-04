@@ -105,37 +105,39 @@
 <!-- Tampilan Tabel Data -->
 <main>
   <table class="content-table">
-    <thead>
-      <tr>
-        <th> Nomor Transaksi </th>
-        <th> Tanggal </th>
-        <th> Outlet </th>
-        <th> Nominal </th>
-        <th> Input Tagihan </th>
-      </tr>
-    </thead>
+    <form action="/sale/Pesanan/Kode-Pembayaran-Retail" method="post">
+      <thead>
+        <tr>
+          <th> Nomor Transaksi </th>
+          <th> Tanggal </th>
+          <th> Outlet </th>
+          <th> Nominal </th>
+          <th> Input Tagihan </th>
+        </tr>
+      </thead>
 
-    <tbody>
-      <tr>
-        <td> <a style="text-decoration: none;"> 12346 </a> </td>
-        <td> 08/09/2022 </td>
-        <td> Alfamart </td>
-        <td> Rp.1.000.000 </td>
-        <td>
-          <div class="mb-3" style="margin-top: 10px; margin-bottom: -2px;">
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Input Kode Tagihan">
-          </div>
-        </td>
-        <td>
-          <button type="button" class="btn btn-primary btn-sm">
-            <i class="bi bi-send-fill">
-              kirim
-            </i>
-          </button>
-        </td>
-    </tbody>
-  </table>
-  </table>
+      <tbody>
+        <%retail.forEach(sale => {%>
+        <tr>
+          <td>
+            <input type="radio" class="btn btn-danger btn-sm" name="transaksi" value="<%= sale.no %>" required>
+            <a style="text-decoration: none;"><%= sale.no %> </a>
+          </td>
+          <td> <%= sale.date %> </td>
+          <td> <%= sale.payment %> </td>
+          <td> Rp<%= sale.price %> </td>
+          <td>
+            <div class="mb-3" style="margin-top: 10px; margin-bottom: -2px;">
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Input Kode Tagihan"
+                name="tagihan">
+            </div>
+          </td>
+          <td>
+            <input type="submit" class="btn btn-success btn-sm" name="konfirmasi" value="Kirim">
+          </td>
+          <%})%>
+      </tbody>
+    </form>
   </table>
 
   <!-- Sumber JS -->
