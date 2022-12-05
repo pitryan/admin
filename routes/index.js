@@ -17,7 +17,7 @@ router.get('/', async(req, res) => {
 
 });
 
-router.get('/Semua-pesanan', (req, res) => {
+router.get('/Pesanan/Semua-pesanan', (req, res) => {
     const query2 = Sale.find({});
         query2.exec((error, data) => {
         query2.getFilter();
@@ -27,7 +27,7 @@ router.get('/Semua-pesanan', (req, res) => {
     });
 });
 
-router.get('/Belum-Bayar', (req, res) => {
+router.get('/Pesanan/Belum-Bayar', (req, res) => {
     const query2 = Sale.find({stat_pembayaran: "Belum Dibayar"});
         query2.exec((error, data) => {
         query2.getFilter();
@@ -37,7 +37,7 @@ router.get('/Belum-Bayar', (req, res) => {
     });
 });
 
-router.get('/Sudah-Bayar', (req, res) => {
+router.get('/Pesanan/Sudah-Bayar', (req, res) => {
     const query2 = Sale.find({stat_pembayaran: "Sedang di Verifikasi"});
         query2.exec((error, data) => {
         query2.getFilter();
@@ -47,7 +47,7 @@ router.get('/Sudah-Bayar', (req, res) => {
     });
 });
 
-router.get('/Siap-Dikirim', (req, res) => {
+router.get('/Pesanan/Siap-Dikirim', (req, res) => {
     const query2 = Sale.find({stat_transaksi: "Sedang Dikirim"});
         query2.exec((error, data) => {
         query2.getFilter();
@@ -57,7 +57,7 @@ router.get('/Siap-Dikirim', (req, res) => {
     });
 });
 
-router.get('/Selesai', (req, res) => {
+router.get('/Pesanan/Selesai', (req, res) => {
     const query2 = Sale.find({stat_transaksi: "Sudah Dikirim"});
         query2.exec((error, data) => {
         query2.getFilter();
@@ -67,7 +67,7 @@ router.get('/Selesai', (req, res) => {
     });
 });
 
-router.get('/Kode-Pembayaran-Retail', (req, res) => {
+router.get('/Pesanan/Kode-Pembayaran-Retail', (req, res) => {
     const query2 = Sale.find({retail: "yes"});
         query2.exec((error, data) => {
         query2.getFilter();
