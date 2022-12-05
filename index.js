@@ -6,6 +6,7 @@ const app = express();
 const flash = require("connect-flash");
 const passport = require('passport');
 const port = process.env.PORT || 8000;
+const database = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/AsdarrID';
 
 // set the view engine to ejs
 app.set('view engine', 'ejs'); // Model - View - Controller
@@ -43,7 +44,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect(('mongodb://127.0.0.1:27017/AsdarrID'), (err,res) => {
+mongoose.connect((database), (err,res) => {
     if(err){
         console.error(err);
     }
