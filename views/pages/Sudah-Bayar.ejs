@@ -112,7 +112,7 @@
           <th> Nama </th>
           <th> Payment </th>
           <th> Harga </th>
-          <th> Bukti Transfer </th>
+          <!-- <th> Bukti Transfer </th> -->
           <th> Nomor Transaksi </th>
           <th> Konfirmasi </th>
         </tr>
@@ -126,28 +126,29 @@
           <td> <%= sale.payment%> </td>
           <td> Rp.<%= sale.price %> </td>
 
-          <td>
+          <!-- img -->
+          <!-- <td>
             <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
               data-bs-target="#exampleModal1"><i class="fa-regular fa-eye"></i>
               Lihat
             </button>
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
-              aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Bukti Transaksi</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <img src="../../assets/images/bukti-transfer-m-banking-bca-asli..jpg">
-                  </div>
-                  <br>
+            
+          <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Bukti Transaksi</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <div class="modal-body">
+                  <img src="../../assets/images/bukti-transfer-m-banking-bca-asli..jpg">
+                </div>
+                <br>
               </div>
             </div>
-          </td>
+          </div>
+          </td> -->
           <td>
             <input type="radio" class="btn btn-danger btn-sm" name="transaksi" value="<%= sale.no %>" required>
             <a style="text-decoration: none;"><%= sale.no %> </a>
