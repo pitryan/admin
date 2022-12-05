@@ -6,7 +6,7 @@ const Sale = require('../models/sale');
 const router = express.Router();
 
 
-router.post('/Pesanan/Sudah-Bayar', async(req, res) => {
+router.post('/Sudah-Bayar', async(req, res) => {
     const konfirmasi = req.body.konfirmasi;
     const id_trx = req.body.transaksi;
     if(konfirmasi === "Terima"){
@@ -26,10 +26,10 @@ router.post('/Pesanan/Sudah-Bayar', async(req, res) => {
         data.save();
     });
         
-    res.redirect('/Pesanan/Sudah-Bayar');
+    res.redirect('/Sudah-Bayar');
 });
 
-router.post('/Pesanan/Siap-Dikirim', async(req, res) => {
+router.post('/Siap-Dikirim', async(req, res) => {
     const id_trx = req.body.transaksi;
     const query = Sale.findOne({no: id_trx});
     query.exec((error, data) => {
@@ -39,10 +39,10 @@ router.post('/Pesanan/Siap-Dikirim', async(req, res) => {
         data.save();
     });
     //console.log(id_trx);
-    res.redirect('/Pesanan/Siap-Dikirim');
+    res.redirect('/Siap-Dikirim');
 });
 
-router.post('/Pesanan/Kode-Pembayaran-Retail', async(req, res) => {
+router.post('/Kode-Pembayaran-Retail', async(req, res) => {
     const id_trx = req.body.transaksi;
     const kode = req.body.tagihan;
     
@@ -54,7 +54,7 @@ router.post('/Pesanan/Kode-Pembayaran-Retail', async(req, res) => {
         //console.log("1 document updated");
     });
 
-    res.redirect('/Pesanan/Kode-Pembayaran-Retail');
+    res.redirect('/Kode-Pembayaran-Retail');
 });
 
 module.exports = router;

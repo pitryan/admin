@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="../../assets/images/shorcut.png" />
 
-  <title>Asdarr.ID - Pembayaran Retail</title>
+  <title>Asdarr.ID - Pesanan Sudah Dibayar</title>
 
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -55,7 +55,7 @@
       <div class="info">
         <div class="alert alert-danger" role="alert">
           <a href="Belum-Bayar" class="underline text-decoration-none"><b>Belum Dibayar</b></a>
-          <!-- <p><b> 4 </b></p> -->
+          <p><b> 4 </b></p>
         </div>
       </div>
     </div>
@@ -63,7 +63,7 @@
     <div class="col-md-5 col-lg-2 square">
       <div class="info">
         <div class="alert alert-success" role="alert">
-          <a href="Sudah-Bayar" class="underline text-decoration-none"><b>Sudah
+          <a href="Sudah-Bayar" class="underline text-decoration-none-underline sp"><b>Sudah
               Dibayar</b></a>
           <!-- <p><b> 4 </b></p> -->
         </div>
@@ -92,7 +92,7 @@
     <div class="col-md-5 col-lg-2 square">
       <div class="info">
         <div class="alert alert-danger" role="alert">
-          <a href="Kode-Pembayaran-Retail" class="underline text-decoration-none-underline sp"><b> Kode Tagihan
+          <a href="Kode-Pembayaran-Retail" class="underline text-decoration-none"><b> Kode Tagihan
             </b></a>
           <!-- <p><b> 4 </b></p> -->
         </div>
@@ -105,41 +105,63 @@
 <!-- Tampilan Tabel Data -->
 <main>
   <table class="content-table">
-    <form action="/sale/Pesanan/Kode-Pembayaran-Retail" method="post">
+    <form action="/sale/Sudah-Bayar" method="post">
       <thead>
         <tr>
+          <th> Nomor Telepon </th>
+          <th> Nama </th>
+          <th> Payment </th>
+          <th> Harga </th>
+          <th> Bukti Transfer </th>
           <th> Nomor Transaksi </th>
-          <th> Tanggal </th>
-          <th> Outlet </th>
-          <th> Nominal </th>
-          <th> Input Tagihan </th>
+          <th> Konfirmasi </th>
         </tr>
       </thead>
 
       <tbody>
-        <%retail.forEach(sale => {%>
+        <%SudahBayar.forEach(sale => {%>
         <tr>
+          <td> <%= sale.phone_number %> </td>
+          <td> <%= sale.name %> </td>
+          <td> <%= sale.payment%> </td>
+          <td> Rp.<%= sale.price %> </td>
+
+          <td>
+            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+              data-bs-target="#exampleModal1"><i class="fa-regular fa-eye"></i>
+              Lihat
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Bukti Transaksi</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <img src="../../assets/images/bukti-transfer-m-banking-bca-asli..jpg">
+                  </div>
+                  <br>
+                </div>
+              </div>
+            </div>
+          </td>
           <td>
             <input type="radio" class="btn btn-danger btn-sm" name="transaksi" value="<%= sale.no %>" required>
             <a style="text-decoration: none;"><%= sale.no %> </a>
           </td>
-          <td> <%= sale.date %> </td>
-          <td> <%= sale.payment %> </td>
-          <td> Rp<%= sale.price %> </td>
           <td>
-            <div class="mb-3" style="margin-top: 10px; margin-bottom: -2px;">
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Input Kode Tagihan"
-                name="tagihan">
-            </div>
+            <input type="submit" class="btn btn-danger btn-sm" name="konfirmasi" value="Tolak">
+            <input type="submit" class="btn btn-success btn-sm" name="konfirmasi" value="Terima">
           </td>
-          <td>
-            <input type="submit" class="btn btn-success btn-sm" name="konfirmasi" value="Kirim">
-          </td>
-          <%})%>
+        </tr>
+        <%})%>
       </tbody>
     </form>
   </table>
 
   <!-- Sumber JS -->
-  <script src="../../assets/css/table.js"></script>
+  <script src="../../assets/js/table.js"></script>
   <script src="https://kit.fontawesome.com/695144269c.js" crossorigin="anonymous"></script>
